@@ -1,0 +1,126 @@
+Source: s900-gpu-binary
+Priority: extra
+Maintainer: Ying-Chun Liu (PaulLiu) <paulliu@debian.org>
+Build-Depends: debhelper (>=9), patchelf
+Standards-Version: 3.9.6
+Section: non-free/libs
+Homepage: https://www.96boards.org/products/ce/bubblegum96/
+
+Package: libpvr-private
+Section: non-free/libs
+Architecture: arm64
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Multi-Arch: same
+Description: pvr private lib
+ Private libraries for pvr.
+
+Package: libgles1-pvr
+Section: non-free/libs
+Architecture: arm64
+Depends:
+ libpvr-private,
+ ${shlibs:Depends},
+ ${misc:Depends},
+Provides: libgles1, libgles1-mesa
+Conflicts: libgles1, libgles1-mesa
+Replaces: libgles1, libgles1-mesa
+Pre-Depends: ${misc:Pre-Depends}
+Multi-Arch: same
+Description: pvr implementation of the OpenGL|ES 1.x API -- runtime
+ OpenGL|ES is a cross-platform API for full-function 2D and 3D graphics on
+ embedded systems - including consoles, phones, appliances and vehicles.
+ It contains a subset of OpenGL plus a number of extensions for the
+ special needs of embedded systems.
+ .
+ OpenGL|ES 1.x provides an API for fixed-function hardware.
+
+Package: libgles1-pvr-dev
+Section: non-free/libdevel
+Architecture: arm64
+Depends:
+ libgles1-pvr (= ${binary:Version}),
+ ${misc:Depends},
+Conflicts: libgles1-mesa-dev
+Replaces: libgles1-mesa-dev
+Provides: libgles1-mesa-dev
+Multi-Arch: same
+Description: pvr implementation of the OpenGL|ES 1.x API -- development files
+ OpenGL|ES is a cross-platform API for full-function 2D and 3D graphics on
+ embedded systems - including consoles, phones, appliances and vehicles.
+ It contains a subset of OpenGL plus a number of extensions for the
+ special needs of embedded systems.
+ .
+ OpenGL|ES 1.x provides an API for fixed-function hardware.
+ .
+ This package provides a development environment for building programs using
+ the OpenGL|ES 1.x APIs.
+
+Package: libgles2-pvr
+Section: non-free/libs
+Architecture: arm64
+Depends: libpvr-private, ${misc:Depends}, ${shlibs:Depends}
+Conflicts: libgles2, libgles2-mesa
+Replaces: libgles2, libgles2-mesa
+Provides: libgles2, libgles2-mesa
+Pre-Depends: ${misc:Pre-Depends}
+Multi-Arch: same
+Description: pvr implementation of the OpenGL|ES 2.x API -- runtime
+ OpenGL|ES is a cross-platform API for full-function 2D and 3D graphics on
+ embedded systems - including consoles, phones, appliances and vehicles.
+ It contains a subset of OpenGL plus a number of extensions for the
+ special needs of embedded systems.
+ .
+ OpenGL|ES 2.x provides an API for programmable hardware including vertex
+ and fragment shaders.
+
+Package: libgles2-pvr-dev
+Section: non-free/libdevel
+Architecture: arm64
+Depends: libgles2-pvr (= ${binary:Version}), ${misc:Depends}
+Conflicts: libgles2-mesa-dev
+Replaces: libgles2-mesa-dev
+Provides: libgles2-mesa-dev
+Multi-Arch: same
+Description: pvr implementation of the OpenGL|ES 2.x API -- development files
+ OpenGL|ES is a cross-platform API for full-function 2D and 3D graphics on
+ embedded systems - including consoles, phones, appliances and vehicles.
+ It contains a subset of OpenGL plus a number of extensions for the
+ special needs of embedded systems.
+ .
+ OpenGL|ES 2.x provides an API for programmable hardware including vertex
+ and fragment shaders.
+ .
+ This package provides a development environment for building applications
+ using the OpenGL|ES 2.x APIs.
+
+Package: xserver-xorg-video-pvr
+Architecture: arm64
+Depends: libpvr-private,
+ ${shlibs:Depends},
+ ${misc:Depends},
+Recommends: libgl1-pvr-dri
+Description: X.Org X server -- pvr display driver
+ This driver for the X.Org X server (see xserver-xorg for a further
+ description) provides support for PowerVR cards.
+
+Package: libgl1-pvr-dri
+Section: non-free/libs
+Architecture: arm64
+Pre-Depends: ${misc:Pre-Depends}
+Depends: libpvr-private,
+ ${shlibs:Depends},
+ ${misc:Depends}
+Recommends: libtxc-dxtn-s2tc0 | libtxc-dxtn0
+Breaks:
+ xserver-xorg-core (<< 2:1.14.3-5),
+Multi-Arch: same
+Description: pvr implementation of the OpenGL API -- DRI modules
+ This package does not include the OpenGL library itself, only the DRI
+ modules for accelerating direct rendering.
+
+Package: pvr-utils
+Section: non-free/x11
+Architecture: arm64
+Depends: libpvr-private, ${shlibs:Depends}, ${misc:Depends},
+Description: Miscellaneous pvr GL utilities
+ This package provides several basic GL utilities built by pvr.

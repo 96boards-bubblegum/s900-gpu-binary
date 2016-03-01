@@ -1,0 +1,45 @@
+#!/usr/bin/make -f
+# See debhelper(7) (uncomment to enable)
+# output every command that modifies files on the build system.
+#export DH_VERBOSE = 1
+
+
+# see FEATURE AREAS in dpkg-buildflags(1)
+#export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+
+# see ENVIRONMENT in dpkg-buildflags(1)
+# package maintainers to append CFLAGS
+#export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
+# package maintainers to append LDFLAGS
+#export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
+
+%:
+	dh $@ 
+
+
+override_dh_auto_configure:
+	dh_auto_configure --
+
+override_dh_auto_build:
+	dh_auto_build
+	rm -rf $(CURDIR)/build
+	mkdir -p $(CURDIR)/build
+	cp -f $(CURDIR)/target_arm64/*.so $(CURDIR)/build
+	cp -f $(CURDIR)/target_arm64/usr/local/pvr/lib/dri/pvr_dri.so $(CURDIR)/build
+	cp -f $(CURDIR)/target_arm64/xorg.conf $(CURDIR)/build/xorg_pvr.conf
+	chmod a-x $(CURDIR)/build/*.so
+	mv -f build/libGLESv1_CM.so build/libGLESv1_CM.so.1.1.0
+	mv -f build/libGLESv2.so build/libGLESv2.so.2.0.0
+	for i in libpvrbm.so libPVRScopeServices.so libusc.so libpvr_dri_support.so libsrv_init.so libglslcompiler.so libPVROCL.so libsrv_um.so liboclcompiler.so libPVROGL_MESA.so libufwriter.so; do patchelf --set-rpath '$$ORIGIN' $(CURDIR)/build/$$i; done
+	patchelf --set-rpath '$$ORIGIN/pvr' build/libGLESv2.so.*
+	patchelf --set-rpath '$$ORIGIN/pvr' build/libGLESv1_CM.so.*
+	patchelf --set-rpath '$$ORIGIN/../../../aarch64-linux-gnu/pvr' build/pvr_drv.so
+	patchelf --set-rpath '$$ORIGIN/../pvr' build/pvr_dri.so
+
+override_dh_auto_clean:
+	rm -rf $(CURDIR)/build
+	dh_auto_clean
+
+override_dh_strip:
+	#no strip

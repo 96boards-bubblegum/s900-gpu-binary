@@ -1,0 +1,5 @@
+s900-gpu-binary (20151010-1) unstable; urgency=medium
+
+  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+
+ -- Ying-Chun Liu (PaulLiu) <paulliu@debian.org>  Tue, 01 Mar 2016 14:57:26 +0800

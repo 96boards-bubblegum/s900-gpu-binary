@@ -1,0 +1,2 @@
+build/pvr_drv.so usr/lib/xorg/modules/drivers
+build/xorg_pvr.conf etc/X11/xorg.conf.d

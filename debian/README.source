@@ -1,0 +1,7 @@
+s900-gpu-binary for Debian
+-------------------------
+
+Upstream doesn't provide any source and only a binary tarball.
+
+ -- Ying-Chun Liu (PaulLiu) <paulliu@debian.org>  Tue, 01 Mar 2016 14:57:26 +0800
+
