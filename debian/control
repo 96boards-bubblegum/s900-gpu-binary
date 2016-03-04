@@ -17,10 +17,7 @@ Description: pvr private lib
 Package: libgles1-pvr
 Section: non-free/libs
 Architecture: arm64
-Depends:
- libpvr-private,
- ${shlibs:Depends},
- ${misc:Depends},
+Depends: libpvr-private, ${misc:Depends}, ${shlibs:Depends}
 Provides: libgles1, libgles1-mesa
 Conflicts: libgles1, libgles1-mesa
 Replaces: libgles1, libgles1-mesa
@@ -37,9 +34,7 @@ Description: pvr implementation of the OpenGL|ES 1.x API -- runtime
 Package: libgles1-pvr-dev
 Section: non-free/libdevel
 Architecture: arm64
-Depends:
- libgles1-pvr (= ${binary:Version}),
- ${misc:Depends},
+Depends: libgles1-pvr (= ${binary:Version}), ${misc:Depends}
 Conflicts: libgles1-mesa-dev
 Replaces: libgles1-mesa-dev
 Provides: libgles1-mesa-dev
@@ -95,9 +90,7 @@ Description: pvr implementation of the OpenGL|ES 2.x API -- development files
 
 Package: xserver-xorg-video-pvr
 Architecture: arm64
-Depends: libpvr-private,
- ${shlibs:Depends},
- ${misc:Depends},
+Depends: libpvr-private, ${misc:Depends}, ${shlibs:Depends}
 Recommends: libgl1-pvr-dri
 Description: X.Org X server -- pvr display driver
  This driver for the X.Org X server (see xserver-xorg for a further
@@ -107,12 +100,9 @@ Package: libgl1-pvr-dri
 Section: non-free/libs
 Architecture: arm64
 Pre-Depends: ${misc:Pre-Depends}
-Depends: libpvr-private,
- ${shlibs:Depends},
- ${misc:Depends}
+Depends: libpvr-private, ${misc:Depends}, ${shlibs:Depends}
 Recommends: libtxc-dxtn-s2tc0 | libtxc-dxtn0
-Breaks:
- xserver-xorg-core (<< 2:1.14.3-5),
+Breaks: xserver-xorg-core (<< 2:1.14.3-5)
 Multi-Arch: same
 Description: pvr implementation of the OpenGL API -- DRI modules
  This package does not include the OpenGL library itself, only the DRI
@@ -121,6 +111,6 @@ Description: pvr implementation of the OpenGL API -- DRI modules
 Package: pvr-utils
 Section: non-free/x11
 Architecture: arm64
-Depends: libpvr-private, ${shlibs:Depends}, ${misc:Depends},
+Depends: libpvr-private, ${misc:Depends}, ${shlibs:Depends}
 Description: Miscellaneous pvr GL utilities
  This package provides several basic GL utilities built by pvr.

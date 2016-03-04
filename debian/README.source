@@ -14,4 +14,8 @@ To build the package:
 
  * gbp buildpackage --git-pristine-tar
 
+To update the package:
+
+ * gbp pull
+
  -- Ying-Chun Liu (PaulLiu) <paulliu@debian.org>  Tue, 01 Mar 2016 14:57:26 +0800

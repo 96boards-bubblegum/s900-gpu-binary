@@ -1,6 +1,6 @@
 s900-gpu-binary for Debian
 -------------------------
 
-We use divert to overwrite system libGLES stuff.
+This package is still WIP.
 
  -- Ying-Chun Liu (PaulLiu) <paulliu@debian.org>  Tue, 01 Mar 2016 14:57:26 +0800
