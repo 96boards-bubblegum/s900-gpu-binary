@@ -1,7 +1,17 @@
 s900-gpu-binary for Debian
 -------------------------
 
-Upstream doesn't provide any source and only a binary tarball.
+For anyone who wants to build this package. Please install git-buildpackage and
+pristine-tar.
+
+ * apt-get install git-buildpackage pristine-tar
+
+And use the following command to clone the package:
+
+ * gbp clone https://git.linaro.org/people/paul.liu/s900-gpu-binary.git --pristine-tar
+
+To build the package:
+
+ * gbp buildpackage --git-pristine-tar
 
  -- Ying-Chun Liu (PaulLiu) <paulliu@debian.org>  Tue, 01 Mar 2016 14:57:26 +0800
-
