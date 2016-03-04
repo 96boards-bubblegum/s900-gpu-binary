@@ -1,0 +1,6 @@
+sdkdir=/home/hexibin1/rogue/rogue/binary_owl_linux_xorg_release/target_arm64/usr/local/pvr/include/xorg
+
+Name: xorg-mouse
+Description: X.Org mouse input driver for non-evdev OS'es
+Version: 1.9.0
+Cflags: -I${sdkdir}

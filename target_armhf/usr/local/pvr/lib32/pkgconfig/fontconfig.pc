@@ -1,0 +1,18 @@
+prefix=/usr/local/pvr
+exec_prefix=${prefix}
+libdir=/usr/local/pvr/lib32
+includedir=${prefix}/include
+sysconfdir=${prefix}/etc
+localstatedir=${prefix}/var
+PACKAGE=fontconfig
+confdir=@baseconfigdir@
+cachedir=${localstatedir}/cache/${PACKAGE}
+
+Name: Fontconfig
+Description: Font configuration and customization library
+Version: 2.11.0
+Requires:  freetype2
+Requires.private: 
+Libs: -L${libdir} -lfontconfig
+Libs.private: -L/home/hexibin1/rogue/rogue/binary_owl_linux_xorg_release/target_armhf/usr/local/pvr/lib32 -lexpat -L/home/hexibin1/rogue/rogue/binary_owl_linux_xorg_release/target_armhf/usr/local/pvr/lib32 -lfreetype    
+Cflags: -I${includedir} -I/home/hexibin1/rogue/rogue/binary_owl_linux_xorg_release/target_armhf/usr/local/pvr/include -I/home/hexibin1/rogue/rogue/binary_owl_linux_xorg_release/target_armhf/usr/local/pvr/include/freetype2 -I/home/hexibin1/rogue/rogue/binary_owl_linux_xorg_release/target_armhf/usr/local/pvr/include    

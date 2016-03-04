@@ -1,0 +1,13 @@
+#version 300 es
+in highp vec2 texcoord;
+in highp vec4 basecolor;
+out highp vec4 myFragColor;
+
+uniform highp sampler2D basetexture;
+
+void main(void)
+{
+	highp vec4 texlookup = texture(basetexture, texcoord);
+
+	myFragColor = texlookup * basecolor;
+}

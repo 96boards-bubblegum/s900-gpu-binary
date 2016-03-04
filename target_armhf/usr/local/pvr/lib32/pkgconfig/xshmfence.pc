@@ -1,0 +1,11 @@
+prefix=/usr/local/pvr
+exec_prefix=${prefix}
+libdir=/usr/local/pvr/lib32
+includedir=${prefix}/include
+
+Name: xshmfence
+Description: The X Shared Memory Fence Library
+Version: 1.1
+Cflags: -I${includedir} -I/home/hexibin1/rogue/rogue/binary_owl_linux_xorg_release/target_armhf/usr/local/pvr/include  
+Libs: -L${libdir} -lxshmfence
+Libs.private: 

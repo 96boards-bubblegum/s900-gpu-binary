@@ -1,0 +1,16 @@
+install_file glsltest1_vertshader.txt ${SHADER_DESTDIR}/glsltest1_vertshader.txt "copy_files" 0644 0:0
+install_file glsltest1_fragshaderA.txt ${SHADER_DESTDIR}/glsltest1_fragshaderA.txt "copy_files" 0644 0:0
+install_file glsltest1_fragshaderB.txt ${SHADER_DESTDIR}/glsltest1_fragshaderB.txt "copy_files" 0644 0:0
+install_file gles3test1_vertshader.txt ${SHADER_DESTDIR}/gles3test1_vertshader.txt "copy_files" 0644 0:0
+install_file gles3test1_fragshaderA.txt ${SHADER_DESTDIR}/gles3test1_fragshaderA.txt "copy_files" 0644 0:0
+install_file gles3test1_fragshaderB.txt ${SHADER_DESTDIR}/gles3test1_fragshaderB.txt "copy_files" 0644 0:0
+install_file gltest2_vertshader.txt ${SHADER_DESTDIR}/gltest2_vertshader.txt "copy_files" 0644 0:0
+install_file gltest2_fragshaderA.txt ${SHADER_DESTDIR}/gltest2_fragshaderA.txt "copy_files" 0644 0:0
+install_file gltest2_fragshaderB.txt ${SHADER_DESTDIR}/gltest2_fragshaderB.txt "copy_files" 0644 0:0
+install_file pvrhwperf ${DATA_DESTDIR}/pvrhwperf "copy_files" 0755 0:0
+install_file pvrlogdump ${DATA_DESTDIR}/pvrlogdump "copy_files" 0755 0:0
+install_file xgles2image_vertshader.txt ${SHADER_DESTDIR}/xgles2image_vertshader.txt "copy_files" 0644 0:0
+install_file xgles2image_fragshaderA.txt ${SHADER_DESTDIR}/xgles2image_fragshaderA.txt "copy_files" 0644 0:0
+install_file xgles2image_fragshaderB.txt ${SHADER_DESTDIR}/xgles2image_fragshaderB.txt "copy_files" 0644 0:0
+install_file xgles2image_vertshaderW.txt ${SHADER_DESTDIR}/xgles2image_vertshaderW.txt "copy_files" 0644 0:0
+install_file xgles2image_fragshaderW.txt ${SHADER_DESTDIR}/xgles2image_fragshaderW.txt "copy_files" 0644 0:0

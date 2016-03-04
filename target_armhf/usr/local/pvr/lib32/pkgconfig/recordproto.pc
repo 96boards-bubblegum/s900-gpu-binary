@@ -1,0 +1,9 @@
+prefix=/usr/local/pvr
+exec_prefix=${prefix}
+libdir=/usr/local/pvr/lib32
+includedir=${prefix}/include
+ 
+Name: RecordProto
+Description: Record extension headers
+Version: 1.14.2
+Cflags: -I${includedir}

@@ -1,0 +1,18 @@
+#version 300 es
+out highp vec2 texcoord;
+out highp vec4 basecolor;
+
+in vec4 position;
+in vec4 inputcolor;
+in vec2 inputtexcoord;
+
+uniform mat4 mvp;
+
+
+void main(void)
+{
+	basecolor = inputcolor;
+	texcoord = inputtexcoord;
+
+	gl_Position = mvp * position;
+}
