@@ -3,4 +3,8 @@ s900-gpu-binary for Debian
 
 This package is still WIP.
 
+For those who wants to run pvr-utils. Please copy all the text files in
+/usr/share/pvr-utils/*.txt to /usr/local/bin
+
+
  -- Ying-Chun Liu (PaulLiu) <paulliu@debian.org>  Tue, 01 Mar 2016 14:57:26 +0800
