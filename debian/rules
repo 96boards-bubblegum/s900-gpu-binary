@@ -25,17 +25,28 @@ override_dh_auto_build:
 	dh_auto_build
 	rm -rf $(CURDIR)/build
 	mkdir -p $(CURDIR)/build
+
+	# libpvr-private
 	cp -f $(CURDIR)/target_arm64/*.so $(CURDIR)/build
-	cp -f $(CURDIR)/target_arm64/usr/local/pvr/lib/dri/pvr_dri.so $(CURDIR)/build
+	chmod a-x $(CURDIR)/build/*.so
+	mv $(CURDIR)/build/liboclcompiler.so $(CURDIR)/build/liboclcompiler.so.1.0
+	#for i in libpvrbm.so libPVRScopeServices.so libusc.so libpvr_dri_support.so libsrv_init.so libglslcompiler.so libPVROCL.so libsrv_um.so liboclcompiler.so libPVROGL_MESA.so libufwriter.so; do patchelf --set-rpath '$$ORIGIN' $(CURDIR)/build/$$i; done
+
+	# libgl1-pvr-dri
+	cp -f `find $(CURDIR)/target_arm64 -name pvr_dri.so` $(CURDIR)/build
+	chmod a-x $(CURDIR)/build/*.so
+	#patchelf --set-rpath '$$ORIGIN/../pvr' build/pvr_dri.so
+
+	# xserver-xorg-video-pvr
 	cp -f $(CURDIR)/target_arm64/xorg.conf $(CURDIR)/build/xorg_pvr.conf
+	cp -f $(CURDIR)/target_arm64/libGLESv1_CM.so $(CURDIR)/build
+	cp -f $(CURDIR)/target_arm64/libGLESv2.so $(CURDIR)/build
 	chmod a-x $(CURDIR)/build/*.so
 	mv -f build/libGLESv1_CM.so build/libGLESv1_CM.so.1.1.0
 	mv -f build/libGLESv2.so build/libGLESv2.so.2.0.0
-	for i in libpvrbm.so libPVRScopeServices.so libusc.so libpvr_dri_support.so libsrv_init.so libglslcompiler.so libPVROCL.so libsrv_um.so liboclcompiler.so libPVROGL_MESA.so libufwriter.so; do patchelf --set-rpath '$$ORIGIN' $(CURDIR)/build/$$i; done
-	patchelf --set-rpath '$$ORIGIN/pvr' build/libGLESv2.so.*
-	patchelf --set-rpath '$$ORIGIN/pvr' build/libGLESv1_CM.so.*
-	patchelf --set-rpath '$$ORIGIN/../../../aarch64-linux-gnu/pvr' build/pvr_drv.so
-	patchelf --set-rpath '$$ORIGIN/../pvr' build/pvr_dri.so
+	#patchelf --set-rpath '$$ORIGIN/pvr' build/libGLESv2.so.*
+	#patchelf --set-rpath '$$ORIGIN/pvr' build/libGLESv1_CM.so.*
+	#patchelf --set-rpath '$$ORIGIN/../../../aarch64-linux-gnu/pvr' build/pvr_drv.so
 
 override_dh_auto_clean:
 	rm -rf $(CURDIR)/build
