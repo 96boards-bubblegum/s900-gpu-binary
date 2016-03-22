@@ -328,24 +328,24 @@ dump_app_info() {
             echo ""
         fi
 
-        if [ -f /usr/local/bin/gltest1 ]; then
+        if [ -f /usr/bin/gltest1 ]; then
             echo "Checking linkage of gltest1:"
-            ldd /usr/local/bin/gltest1
+            ldd /usr/bin/gltest1
         fi
-        if [ -f /usr/local/bin/gles1test1 ]; then
+        if [ -f /usr/bin/gles1test1 ]; then
             echo ""
             echo "Checking linkage of gles1test1:"
-            ldd /usr/local/bin/gles1test1
+            ldd /usr/bin/gles1test1
         fi
-        if [ -f /usr/local/bin/xgltest1 ]; then
+        if [ -f /usr/bin/xgltest1 ]; then
             echo ""
             echo "Checking linkage of xgltest1:"
-            ldd /usr/local/bin/xgltest1
+            ldd /usr/bin/xgltest1
         fi
-        if [ -f /usr/local/bin/xgles1test1 ]; then
+        if [ -f /usr/bin/xgles1test1 ]; then
             echo ""
             echo "Checking linkage of xgles1test1:"
-            ldd /usr/local/bin/xgles1test1
+            ldd /usr/bin/xgles1test1
         fi
     fi
 }

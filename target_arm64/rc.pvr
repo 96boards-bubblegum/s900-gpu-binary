@@ -57,7 +57,7 @@ load_pvr()
 
 		# Load the X Server.
 		#
-	/usr/local/pvr/bin/X -verbose -config /usr/local/pvr/etc/X11/xorg.conf &
+	/usr/bin/X -verbose -config /usr/etc/X11/xorg.conf &
 
 		# Create the directory for the Wayland socket.
 	#
