@@ -82,12 +82,11 @@ done
 PVRVERSION="rogueddk_1.5@3604260"
 PVRBUILD=release
 PRIMARY_ARCH="target_arm64"
-#ARCHITECTURES="target_arm64 target_armhf target_neutral"
-ARCHITECTURES="target_arm64 target_neutral"
-LWS_PREFIX=/usr/local/pvr
+ARCHITECTURES="target_arm64  target_neutral"
+LWS_PREFIX=/usr
 SHLIB_DESTDIR_DEFAULT=/usr/lib
 
-BIN_DESTDIR_DEFAULT=/usr/local/bin
+BIN_DESTDIR_DEFAULT=/usr/bin
 RC_DESTDIR=/etc/init.d
 UDEV_DESTDIR=/etc/udev/rules.d
 OPENCL_ICD_CONF=/etc/OpenCL/vendors
@@ -126,7 +125,7 @@ if [ `echo ${ARCHITECTURES} | wc -w` -le 2 ]; then
     INSTALLING_SINGLELIB=1
 fi
 
-XORG_LOCATION=/usr/local/pvr
+XORG_LOCATION=/usr
 INSTALL_PREFIX="i"
 INSTALL_PREFIX_CAP="I"
 

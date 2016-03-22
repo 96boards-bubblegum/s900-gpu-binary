@@ -1,0 +1,12 @@
+prefix=/mnt/gpu/code/rogue/binary_owl_linux_xorg_release/target_arm64
+exec_prefix=${prefix}
+libdir=${exec_prefix}
+includedir=/mnt/gpu/code/rogue/include/khronos
+
+Name: glesv2
+Description: OpenGL ES 3.0 library
+Requires.private: 
+Version: 10.3.0
+Libs: -L${libdir} -lGLESv2
+Libs.private: -lm -lpthread -lsrv_um -lusc
+Cflags: -I${includedir} 
