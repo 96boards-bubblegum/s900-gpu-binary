@@ -17,6 +17,10 @@
 #ifndef _XORG_SERVER_H_
 #define _XORG_SERVER_H_
 
+#ifdef HAVE_XORG_CONFIG_H
+#error Include xorg-config.h when building the X server
+#endif
+
 /* Support BigRequests extension */
 #define BIGREQS 1
 
@@ -147,7 +151,7 @@
 /* #undef XORG_RELEASE */
 
 /* Current Xorg version */
-#define XORG_VERSION_CURRENT (((1) * 10000000) + ((16) * 100000) + ((4) * 1000) + 0)
+#define XORG_VERSION_CURRENT (((1) * 10000000) + ((17) * 100000) + ((3) * 1000) + 0)
 
 /* Build Xv Extension */
 #define XvExtension 1
@@ -227,5 +231,8 @@
 
 /* Ask fontsproto to make font path element names const */
 #define FONT_PATH_ELEMENT_NAME_CONST    1
+
+/* byte order */
+#define X_BYTE_ORDER X_LITTLE_ENDIAN
 
 #endif /* _XORG_SERVER_H_ */
