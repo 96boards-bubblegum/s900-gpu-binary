@@ -1,4 +1,7 @@
-target_arm64/usr/lib/*/libEGL.so usr/lib/aarch64-linux-gnu
-target_arm64/usr/include/EGL usr/include
-target_arm64/usr/include/KHR usr/include
-target_arm64/usr/lib/*/pkgconfig/egl.pc usr/lib/aarch64-linux-gnu/pkgconfig
+# Wayland support, only on Linux:
+usr/include/EGL
+usr/include/KHR
+usr/lib/*/libEGL.so
+usr/lib/*/libwayland-egl.so
+usr/lib/*/pkgconfig/egl.pc
+usr/lib/*/pkgconfig/wayland-egl.pc

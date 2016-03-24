@@ -1,1 +1,1 @@
-target_arm64/usr/lib/pkgconfig/glesv1_cm.pc usr/lib/aarch64-linux-gnu/pkgconfig
+target_arm64/usr/lib/*/pkgconfig/glesv1_cm.pc usr/lib/aarch64-linux-gnu/pkgconfig

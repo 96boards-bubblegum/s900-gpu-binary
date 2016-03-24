@@ -1,3 +1,9 @@
+s900-gpu-binary (20160324-1) unstable; urgency=low
+
+  * Imported Upstream version 20160324
+
+ -- Ying-Chun Liu (PaulLiu) <paulliu@debian.org>  Thu, 24 Mar 2016 15:02:34 +0800
+
 s900-gpu-binary (20160322-1) unstable; urgency=low
 
   * Update debian/README.source to include gbp usage.

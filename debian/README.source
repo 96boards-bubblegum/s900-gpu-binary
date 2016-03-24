@@ -8,7 +8,7 @@ pristine-tar.
 
 And use the following command to clone the package:
 
- * gbp clone https://git.linaro.org/people/paul.liu/s900-gpu-binary.git --pristine-tar
+ * gbp clone --pristine-tar https://git.linaro.org/people/paul.liu/s900-gpu-binary.git
 
 To build the package:
 

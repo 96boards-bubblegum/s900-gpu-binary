@@ -48,6 +48,11 @@ override_dh_auto_build:
 	#patchelf --set-rpath '$$ORIGIN/pvr' build/libGLESv1_CM.so.*
 	#patchelf --set-rpath '$$ORIGIN/../../../aarch64-linux-gnu/pvr' build/pvr_drv.so
 
+override_dh_auto_install:
+	dh_auto_install
+	mkdir -p $(CURDIR)/debian/tmp
+	./install.sh -v --root $(CURDIR)/debian/tmp
+
 override_dh_auto_clean:
 	rm -rf $(CURDIR)/build
 	dh_auto_clean
