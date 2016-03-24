@@ -4,23 +4,23 @@ s900-gpu-binary for Debian
 = Install =
 
  * The minimum packages that makes the system working is
-   + dpkg -i libegl1-pvr_20160324-1_arm64.deb \
-             libgl1-pvr-dri_20160324-1_arm64.deb \
-             libgl1-pvr-glx_20160324-1_arm64.deb \
-             libglapi-pvr_20160324-1_arm64.deb \
-             libgles1-pvr_20160324-1_arm64.deb \
-             libgles2-pvr_20160324-1_arm64.deb \
-             libpvr-private_20160324-1_arm64.deb \
-             libwayland-egl1-pvr_20160324-1_arm64.deb \
-             pvr-icd-libopencl1_20160324-1_arm64.deb \
-             pvr-opencl-icd_20160324-1_arm64.deb \
-             pvr-utils_20160324-1_arm64.deb \
-             xserver-xorg-core-pvr_20160324-1_arm64.deb \
-             xserver-xorg-video-pvr_20160324-1_arm64.deb
+   + dpkg -i libegl1-pvr_*_arm64.deb \
+             libgl1-pvr-dri_*_arm64.deb \
+             libgl1-pvr-glx_*_arm64.deb \
+             libglapi-pvr_*_arm64.deb \
+             libgles1-pvr_*_arm64.deb \
+             libgles2-pvr_*_arm64.deb \
+             libpvr-private_*_arm64.deb \
+             libwayland-egl1-pvr_*_arm64.deb \
+             pvr-icd-libopencl1_*_arm64.deb \
+             pvr-opencl-icd_*_arm64.deb \
+             pvr-utils_*_arm64.deb \
+             xserver-xorg-core-pvr_*_arm64.deb \
+             xserver-xorg-video-pvr_*_arm64.deb
 
  * We still don't know we need libGLESv2.so to be installed for es2gears to
    work.
-   + dpkg -i libgles2-pvr-dev_20160322-1_arm64.deb
+   + dpkg -i libgles2-pvr-dev_*_arm64.deb
 
  * For those who wants to run pvr-utils. Please copy all the text files in
    /usr/share/pvr-utils/*.txt to /usr/local/bin
