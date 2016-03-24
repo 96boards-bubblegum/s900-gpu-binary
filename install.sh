@@ -622,7 +622,7 @@ function uninstall_locally {
             echo 
             if [ -d ${DISCIMAGE}$XORG_LOCATION ] ; then
                 echo "Removing X components."
-                $DOIT rm -Rf ${DISCIMAGE}$XORG_LOCATION
+                # $DOIT rm -Rf ${DISCIMAGE}$XORG_LOCATION
                 echo 
             fi
         fi

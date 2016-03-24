@@ -59,14 +59,6 @@ load_pvr()
 		#
 	/usr/bin/X -verbose -config /usr/etc/X11/xorg.conf &
 
-		# Create the directory for the Wayland socket.
-	#
-	if [ -z "$XDG_RUNTIME_DIR" ]; then
-		XDG_RUNTIME_DIR=/tmp/wayland
-	fi
-	if [ ! -e $XDG_RUNTIME_DIR ]; then
-		mkdir $XDG_RUNTIME_DIR && chmod 0700 $XDG_RUNTIME_DIR
-	fi
 	
 	echo "Loaded PowerVR consumer services."
 	return 0;

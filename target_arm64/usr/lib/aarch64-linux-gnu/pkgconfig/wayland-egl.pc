@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=/usr/lib/aarch64-linux-gnu
+includedir=${prefix}/include
+
+Name: wayland-egl
+Description: Mesa wayland-egl library
+Version: 10.3.0
+Requires: wayland-client
+Libs: -L${libdir} -lwayland-egl
+Cflags: -I${includedir}
