@@ -1,6 +1,5 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: s900-gpu-binary
-Source: <url://example.com>
 
 Files: *
 Copyright: 2015 Actions-Semi
