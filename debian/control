@@ -1,8 +1,8 @@
 Source: s900-gpu-binary
 Priority: extra
 Maintainer: Ying-Chun Liu (PaulLiu) <paulliu@debian.org>
-Build-Depends: debhelper (>=9), patchelf
-Standards-Version: 3.9.6
+Build-Depends: debhelper (>=9)
+Standards-Version: 3.9.7
 Section: non-free/libs
 Homepage: https://www.96boards.org/products/ce/bubblegum96/
 
